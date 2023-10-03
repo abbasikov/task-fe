@@ -1,0 +1,14 @@
+.app_header {
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+.active_route {
+  color: #1677ff;
+  border-bottom: #008eff 3px solid;
+  padding-bottom: 10px;
+}
+
+.inactive_route {
+  color: #000;
+}
