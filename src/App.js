@@ -13,14 +13,14 @@ function App() {
     <ProfileContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<AppLayout />}>
+          <Route path="/dabot/*" element={<AppLayout />}>
             <Route path="add-links" element={<AddLinks />} />
             <Route path="view-profile" element={<ViewProfile />} />
             <Route path="edit-profile" element={<EditProfile />} />
           </Route>
           <Route
             path="/"
-            element={<Navigate to="/view-profile" replace={true} />}
+            element={<Navigate to="/dabot/view-profile" replace={true} />}
           />
         </Routes>
       </BrowserRouter>
