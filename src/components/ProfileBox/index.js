@@ -35,10 +35,12 @@ const ProfileBox = () => {
         </div>
       </Card>
       <Card title="Links" style={{ width: '100%' }}>
-        {profileData.links.length === 0 ? 'No link added yet!' : ''}
-        {profileData.links.map((link, index) => (
+        {Object.keys(profileData.links).length === 0
+          ? 'No link added yet!'
+          : ''}
+        {Object.entries(profileData.links).map((link, index) => (
           <div key={index}>
-            {link.type}: {link.url}
+            {link[0]}: {link[1]}
           </div>
         ))}
       </Card>

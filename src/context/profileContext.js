@@ -18,7 +18,7 @@ const ProfileContextProvider = ({ children }) => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [userId, setUserId] = useState(null);
-  const [links, setLinks] = useState([]);
+  const [links, setLinks] = useState({});
 
   return (
     <ProfileContext.Provider
