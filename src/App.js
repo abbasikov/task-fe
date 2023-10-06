@@ -6,22 +6,25 @@ import ViewProfile from './pages/ViewProfile';
 import EditProfile from './pages/EditProfile';
 import React from 'react';
 import AppLayout from './components/AppLayout';
+import ProfileContextProvider from './context/profileContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<AppLayout />}>
-          <Route path="add-links" element={<AddLinks />} />
-          <Route path="view-profile" element={<ViewProfile />} />
-          <Route path="edit-profile" element={<EditProfile />} />
-        </Route>
-        <Route
-          path="/"
-          element={<Navigate to="/view-profile" replace={true} />}
-        />
-      </Routes>
-    </BrowserRouter>
+    <ProfileContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/*" element={<AppLayout />}>
+            <Route path="add-links" element={<AddLinks />} />
+            <Route path="view-profile" element={<ViewProfile />} />
+            <Route path="edit-profile" element={<EditProfile />} />
+          </Route>
+          <Route
+            path="/"
+            element={<Navigate to="/view-profile" replace={true} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </ProfileContextProvider>
   );
 }
 
