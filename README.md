@@ -2,9 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Dependencies
+1. NodeJS
+2. Backend Server Running (Visit README file of backend rpeository for guide)
+
+## Environment Variables
+Set the following environment variables:
+```
+REACT_APP_API_URL=
+REACT_APP_FE_URL=
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs the dependencies of the project.
 
 ### `npm start`
 
