@@ -46,7 +46,11 @@ const ProfileBox = () => {
 
   return (
     <div className={classes.profile_box}>
-      <Avatar size={100} icon={<UserOutlined />} />
+      <Avatar
+        size={100}
+        icon={<UserOutlined />}
+        src={profileData.profileImgURL}
+      />
       <div style={{ textAlign: 'center' }}>
         <div style={{ fontSize: 'large', fontWeight: 'bold' }}>
           {profileData.firstName} {profileData.lastName}

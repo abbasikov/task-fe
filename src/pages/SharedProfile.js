@@ -23,6 +23,7 @@ const SharedProfile = () => {
       profileData.setFirstName(userData.firstName);
       profileData.setLastName(userData.lastName);
       profileData.setEmail(userData.email);
+      profileData.setProfileImgURL(userData.profileImgURL);
     } catch (e) {
       message.error(e.message);
     } finally {
