@@ -1,15 +1,29 @@
 import React, { useContext } from 'react';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import { ProfileContext } from '../../context/profileContext';
+import { saveProfileInfo } from '../../api';
 
 const EditProfileForm = () => {
   const profileData = useContext(ProfileContext);
 
-  const onSubmitForm = (data) => {
-    const { firstName, lastName, email } = data;
-    profileData.setEmail(email);
-    profileData.setFirstName(firstName);
-    profileData.setLastName(lastName);
+  const onSubmitForm = async (data) => {
+    try {
+      const { firstName, lastName, email } = data;
+      const { userId } = profileData;
+      const userData = await saveProfileInfo({
+        userId,
+        firstName,
+        lastName,
+        email
+      });
+      profileData.setFirstName(userData.firstName);
+      profileData.setLastName(userData.lastName);
+      profileData.setEmail(userData.email);
+      profileData.setUserId(userData.id);
+      message.success('Data saved successfully!');
+    } catch (e) {
+      message.error(e.message);
+    }
   };
 
   return (

@@ -27,11 +27,7 @@ const ProfileBox = () => {
         </div>
         <div>
           Email:{' '}
-          {profileData.lastName ? (
-            <b>{profileData.lastName}</b>
-          ) : (
-            'Not provided!'
-          )}
+          {profileData.email ? <b>{profileData.email}</b> : 'Not provided!'}
         </div>
       </Card>
       <Card title="Links" style={{ width: '100%' }}>
