@@ -3,6 +3,7 @@ import { Button, Col, message, Row } from 'antd';
 import ProfileBox from '../components/ProfileBox';
 import { LinkOutlined } from '@ant-design/icons';
 import { ProfileContext } from '../context/profileContext';
+import { getShareableToken } from '../api';
 
 const columnsStyling = {
   justifyContent: 'center',
@@ -15,11 +16,24 @@ const ViewProfile = () => {
   const profileData = useContext(ProfileContext);
 
   const onShareProfile = async () => {
-    if (!profileData.firstName && !profileData.lastName && !profileData.email) {
-      await message.error('Profile info not submitted yet!');
-      return;
+    try {
+      if (
+        !profileData.firstName &&
+        !profileData.lastName &&
+        !profileData.email
+      ) {
+        await message.error('Profile info not submitted yet!');
+        return;
+      }
+      const shareableToken = await getShareableToken(profileData.userId);
+      await navigator.clipboard.writeText(
+        `${process.env.REACT_APP_FE_URL}/shared-profile/${shareableToken}`
+      );
+      message.success('Link copied to the clipboard!');
+      message.info('Anybody with the link will be able to view the profile.');
+    } catch (e) {
+      await message.error(e.message);
     }
-    await message.success('hello');
   };
 
   return (
