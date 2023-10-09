@@ -10,7 +10,7 @@ const columnsStyling = {
   borderRadius: 10
 };
 
-const EditProfile = () => {
+const ProfileDetails = () => {
   const [showProfile, setShowProfile] = useState(window.innerWidth > 767);
 
   useEffect(() => {
@@ -44,11 +44,11 @@ const EditProfile = () => {
         ''
       )}
       <Col xs={22} sm={22} md={11} lg={11} xl={11} style={columnsStyling}>
-        <h1>Edit Profile</h1>
+        <h1>Profile Details</h1>
         Add your profile info here.
         <EditProfileForm />
       </Col>
     </Row>
   );
 };
-export default EditProfile;
+export default ProfileDetails;

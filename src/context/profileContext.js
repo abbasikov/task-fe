@@ -5,7 +5,9 @@ export const ProfileContext = React.createContext({
   firstName: '',
   lastName: '',
   email: '',
-  links: [],
+  links: {},
+  profileImgURL: '',
+  setProfileImgURL: (profileImgURL) => {},
   setFirstName: (firstName) => {},
   setLastName: (lastName) => {},
   setEmail: (email) => {},
@@ -19,6 +21,7 @@ const ProfileContextProvider = ({ children }) => {
   const [email, setEmail] = useState('');
   const [userId, setUserId] = useState(null);
   const [links, setLinks] = useState({});
+  const [profileImgURL, setProfileImgURL] = useState('');
 
   return (
     <ProfileContext.Provider
@@ -32,7 +35,9 @@ const ProfileContextProvider = ({ children }) => {
         setFirstName,
         setEmail,
         setLastName,
-        setUserId
+        setUserId,
+        profileImgURL,
+        setProfileImgURL
       }}
     >
       {children}

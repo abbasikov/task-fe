@@ -26,6 +26,8 @@ const EditProfileForm = () => {
     }
   };
 
+  const { firstName, lastName, email } = profileData;
+
   return (
     <Form
       name="basic"
@@ -38,6 +40,7 @@ const EditProfileForm = () => {
       style={{
         marginTop: 30
       }}
+      initialValues={{ firstName, lastName, email }}
       autoComplete="off"
       onFinish={onSubmitForm}
     >
@@ -86,8 +89,7 @@ const EditProfileForm = () => {
 
       <Form.Item
         wrapperCol={{
-          offset: 8,
-          span: 16
+          span: 24
         }}
       >
         <Button type="primary" htmlType="submit" block>

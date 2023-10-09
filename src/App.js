@@ -4,7 +4,7 @@ import './App.css';
 
 import AddLinks from './pages/AddLinks';
 import ViewProfile from './pages/ViewProfile';
-import EditProfile from './pages/EditProfile';
+import ProfileDetails from './pages/ProfileDetails';
 import AppLayout from './components/AppLayout';
 import ProfileContextProvider from './context/profileContext';
 import SharedProfile from './pages/SharedProfile';
@@ -17,7 +17,7 @@ function App() {
           <Route path="/dabot/*" element={<AppLayout />}>
             <Route path="add-links" element={<AddLinks />} />
             <Route path="view-profile" element={<ViewProfile />} />
-            <Route path="edit-profile" element={<EditProfile />} />
+            <Route path="profile-details" element={<ProfileDetails />} />
           </Route>
           <Route path="/shared-profile/:token" element={<SharedProfile />} />
           <Route path="/page-not-found" element={<div> Page Not Found </div>} />

@@ -20,8 +20,8 @@ const SharedProfile = () => {
         return navigate('/page-not-found', { replace: true });
       }
       profileData.setLinks(userData.links);
-      profileData.setFirstName(userData.lastName);
-      profileData.setLastName(userData.firstName);
+      profileData.setFirstName(userData.firstName);
+      profileData.setLastName(userData.lastName);
       profileData.setEmail(userData.email);
     } catch (e) {
       message.error(e.message);
@@ -47,7 +47,7 @@ const SharedProfile = () => {
         alignItems: 'center'
       }}
     >
-      <h1>User's Shared Profile</h1>
+      <h1>{profileData.firstName}'s Shared Profile</h1>
       <ProfileBox />
     </div>
   );

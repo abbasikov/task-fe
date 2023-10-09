@@ -7,14 +7,9 @@ const AppHeader = () => {
   return (
     <Row className={classes.app_header} justify="space-between" align="middle">
       <Space>
-        <NavLink
-          className={(navData) =>
-            navData.isActive ? classes.active_route : classes.inactive_route
-          }
-          to="edit-profile"
-        >
-          Add Profile
-        </NavLink>
+        <h1>Dabot</h1>
+      </Space>
+      <Space>
         <NavLink
           className={(navData) =>
             navData.isActive ? classes.active_route : classes.inactive_route
@@ -22,6 +17,14 @@ const AppHeader = () => {
           to="add-links"
         >
           Add Links
+        </NavLink>
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? classes.active_route : classes.inactive_route
+          }
+          to="profile-details"
+        >
+          Profile Details
         </NavLink>
       </Space>
       <Space>
