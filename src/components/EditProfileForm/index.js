@@ -11,6 +11,7 @@ const EditProfileForm = () => {
     try {
       const imageURL = await uploadProfileImage(profileData.userId, data);
       profileData.setProfileImgURL(imageURL);
+      message.warning('Press submit to save the uploaded image!');
     } catch (e) {
       message.error(e.message);
     }
