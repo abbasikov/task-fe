@@ -83,3 +83,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Functionalities Completed in Test
+
+### Add Links
+You can add your GitHub, YouTube and LinkedIn links in the Add Links
+page.
+
+### Profile Details
+You can add your name, email and photo the Profile Details
+page.
+
+You can see your updated information on the left side (in computer and tab)
+of the screen.
+
+
+### Share Profile
+You can go to View Profile and get a link to share you profile
+with others. Anyone with that link will be able to view your profile.
